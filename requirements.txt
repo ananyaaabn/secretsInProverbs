@@ -1,0 +1,7 @@
+pandas
+transformers
+datasets
+Flask==1.1.4
+openai==0.10.4
+pandas==1.3.3
+scikit-learn

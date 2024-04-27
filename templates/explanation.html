@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proverb Explanation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FFC371, #FF5F6D);
+            color: #0c0c0c;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
+        .proverb-details {
+            border-bottom: 2px solid #FFF;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .proverb-details p {
+            margin-bottom: 10px;
+        }
+        .translation, .explanation, .usage {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #FFF;
+        }
+        .translation p, .explanation p, .usage p {
+            line-height: 1.6;
+        }
+        .search-result {
+            margin-top: 30px;
+        }
+        .search-result a {
+            color: #3a3737;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="proverb-details">
+        <!-- Display selected proverb details -->
+        <h2><u>Selected Proverb Details</u></h2>
+        <p><strong>Proverb:</strong> {{ selected_proverb }}</p>
+        <p><strong>Genre:</strong> {{ genre }}</p>
+        <p><strong>Transliteration:</strong> {{ transliteration }}</p>
+        <p><strong>Meaning:</strong> {{ meaning }}</p>
+        <p><strong>Usage:</strong> {{ usage }}</p>
+    </div>
+    <div class="translation">
+        <h3><strong>Our Trained Model Translation:</strong></h3>
+        {{ model_translation }}
+    </div>
+    
+    
+    <div class="explanation">
+        <h3><u>AI Generated Explanation</u></h3>
+        {% if explanationAI %}
+        <!-- Display the detailed explanation -->
+        {{ explanationAI }}
+        {% else %}
+        <p>No AI-generated explanation available.</p>
+        {% endif %}
+    </div>
+    <div class="usage">
+        <h3><u>AI Generated Usage</u></h3>
+        {% if usageAI %}
+        {{ usageAI }}
+        {% else %}
+        <p>No AI-generated usage available.</p>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

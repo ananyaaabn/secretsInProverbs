@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secrets in Proverbs</title>
+    <style>
+        body {
+    font-family: Allura, cursive; /* Set font to Allura */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFC371, #FF5F6D); /* Gradient background */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem; 
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Box shadow for header */
+}
+
+.header h1 {
+    font-size: 2.5rem; 
+    margin: 0;
+}
+
+.header nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    
+     /* Align items vertically */
+}
+
+.header nav li {
+    margin-right: 45px; /* Adding right margin to create spacing between items */
+}
+
+.header nav form {
+    display: flex; /* Display form elements as flex items */
+    align-items: center; /* Align items vertically */
+    font-size: 1.5rem; /* Adjust this value to change the size of the text */
+    font-family: 'Arial', sans-serif; 
+}
+
+.header nav label {
+    margin-right: 10px;
+     /* Adding right margin to create spacing between label and select */
+}
+
+.header nav select {
+    margin-right: 10px;
+    font-size: 1.5rem; /* Adjust this value to change the size of the text */
+    font-family: 'Arial', sans-serif;  /* Add right margin to create spacing between select and button */
+}
+
+.header nav button {
+    font-size: 1.5rem; /* Set font size to match navigation links */
+    padding: 0.5rem 1rem; /* Add padding to the button */
+    border: none; /* Remove default button border */
+    background-color: #333; /* Set background color */
+    color: #fff; /* Set text color to white */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.header nav button:hover {
+    background-color: #555;
+    
+     /* Darken background color on hover */
+}
+
+.main-content {
+    padding: 2rem;
+    color: #FFF; /* White text color */
+    text-align: center; /* Center align text */
+}
+
+.main-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    text-indent: 2rem; /* Set text indentation */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.text-content {
+    flex: 1;
+    margin-right: 2rem; /* Add some space between text and image */
+}
+
+.text-content h2 {
+    font-size: 1.5rem;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    max-height: 100%; /* Ensure image does not exceed container size */
+    height: auto;
+}
+.header nav a {
+    text-decoration: none;
+    color: #333; /* Dark gray link color */
+    font-size: 1.5rem; /* Adjust this value to change the size of the text */
+    font-family: 'Arial', sans-serif; 
+}    
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Secrets in Proverbs</h1>
+        <nav>
+            <li><a href="#">Home</a></li>
+            <li><a href="/aboutus">About Us</a></li> <!-- Link to the About Us page -->
+            <li>
+                <form action="/language" method="post">
+                    <label for="genre">Search for Genres:</label>
+                    <select name="genre" id="genre">
+                        {% for genre in genres %}
+                        {% set camel_case_genre = genre|title|replace(' ', '') %}
+                        <option value="{{ genre }}">{{ camel_case_genre }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Go</button>
+                </form>
+            </li>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="text-content">
+                <h2>Unlock the Wisdom of Cultural Proverbs</h2>
+                <p>Embark on a Journey Through the Rich Tapestry of Indian Languages and Culture</p>
+                <p>Discover the Soulful Echoes of Kashmiri and Urdu Proverbs, Each Carrying Centuries of Cultural Heritage</p>
+                <p>Immerse Yourself in the Melody of Words, Unraveling the Depths of Tradition and Insight Held Within Every Saying</p>
+                <p>Join Us as We Navigate the Intricate Labyrinth of Proverbs, Unearthing Gems of Wisdom from Across Generations</p>
+                <p>Let the Proverbs Speak: Bridges Between Past and Present, Connecting Hearts and Minds Across Boundaries</p>
+            </div>
+            <div class="image-content">
+                <img src="/static/images/designer.png" alt="Designer Image">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
